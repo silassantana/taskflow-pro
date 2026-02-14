@@ -33,3 +33,14 @@ npm -w client run dev
 ## License / Ownership
 
 All code is original and intended for Project Anvil evaluation dataset. Not for external redistribution.
+
+## Environment Variables
+
+Copy .env.example to .env and fill in the values before running locally.
+
+| Variable | Description | Default |
+|---|---|---|
+| PORT | HTTP server port | 4000 |
+| MONGO_URI | MongoDB connection string | mongodb://localhost:27017/taskflow_pro_dev |
+| JWT_SECRET | Secret key for signing JWTs â€“ **change in production** | dev-secret |
+| VITE_API_URL | Base URL the client uses to reach the API | http://localhost:4000 |

@@ -1,3 +1,4 @@
+// User model - email/password auth, role-based access
 import mongoose, { Schema, Document } from 'mongoose';
 
 export interface IUser extends Document {

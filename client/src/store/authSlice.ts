@@ -1,3 +1,4 @@
+// Auth slice - stores current JWT token and authenticated user
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 interface AuthState { token?: string; user?: { id: string; email: string; name: string }; }
 const initialState: AuthState = {};

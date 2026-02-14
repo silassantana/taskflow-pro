@@ -1,3 +1,4 @@
+// Task model - core work item with status lifecycle and due dates
 import mongoose, { Schema, Document } from 'mongoose';
 
 export interface ITask extends Document {

@@ -1,3 +1,4 @@
+// Project controller - create, list, and fetch analytics stats
 import { Request, Response } from 'express';
 import { Project } from '../models/Project';
 import { projectProgress } from '../services/analyticsService';

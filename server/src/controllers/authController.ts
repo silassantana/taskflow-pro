@@ -1,3 +1,4 @@
+// Auth controller - /register and /login endpoints
 import { Request, Response } from 'express';
 import { User } from '../models/User';
 import bcrypt from 'bcryptjs';

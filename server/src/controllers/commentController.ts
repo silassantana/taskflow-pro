@@ -1,3 +1,4 @@
+// Comment controller - threaded discussion attached to tasks
 import { Request, Response } from 'express';
 import { Comment } from '../models/Comment';
 

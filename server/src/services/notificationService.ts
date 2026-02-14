@@ -1,3 +1,4 @@
+// Notification service - creates and retrieves per-user alerts
 import { Notification } from '../models/Notification';
 
 export async function createNotification(userId: string, type: string, message: string) {

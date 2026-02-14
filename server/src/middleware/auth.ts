@@ -1,3 +1,4 @@
+// Auth middleware - validates Bearer JWT on every protected route
 import { Request, Response, NextFunction } from 'express';
 import { verifyAuthToken } from '../utils/jwt';
 
