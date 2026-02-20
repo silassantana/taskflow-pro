@@ -1,0 +1,18 @@
+repo_overview: |
+  Name: TaskFlow Pro
+  Stack: Node.js/Express + MongoDB (Mongoose) + React + TypeScript + Socket.io + JWT Auth + Redux Toolkit + Tailwind CSS
+  Summary: TaskFlow Pro is an advanced project & task management platform providing team workspaces, real-time collaboration, task tracking, basic analytics, notifications, and file attachment stubs. The starter project includes core CRUD + authentication + real-time event scaffolding. Ten hard tasks (feature/perf/refactor/bug) are defined separately under tasks/ and are not implemented in the starter code.
+  Goals: Provide a non-trivial full-stack codebase (25+ files) suitable for complex AI agent evaluation. Each advanced task requires multi-file reasoning, architectural changes, and algorithmic rigor.
+  Components:
+    - Authentication: Register/Login with hashed passwords & JWT issuance/verification.
+    - Projects: CRUD workspaces, membership listing, progress aggregation.
+    - Tasks: CRUD tasks with assignment, status, due dates, simple filtering.
+    - Comments: Linked to tasks, basic creation/list retrieval.
+    - Notifications: Stored + fetch endpoint, server emits socket events placeholder.
+    - Attachments: Model + stub service (actual file handling deferred to tasks).
+    - Real-time: Socket.io namespace with join + task update broadcast stubs.
+    - Analytics: Basic progress calculation per project (percent completed tasks).
+    - Filtering: Query params for status, assignee, dueDate range, text search (basic regex).
+  Testing: Jest + ts-jest; run_tests.sh executes task-specific test suites (not yet passing until task implemented). Base smoke tests included.
+  Docker: Multi-stage build for Node environment; ENTRYPOINT uses run_tests.sh to execute task tests.
+  Tasks: Each under tasks/<id>/ with description + placeholder Jest test suite + solution diff file placeholder to be populated after implementation pass.
