@@ -1,4 +1,5 @@
 // Project model - groups tasks and tracks team members
+// Project model - groups tasks and tracks team members
 import mongoose, { Schema, Document } from 'mongoose';
 
 export interface IProject extends Document {
