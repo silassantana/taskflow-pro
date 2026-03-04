@@ -1,3 +1,4 @@
+// Notification model - per-user alert records
 import mongoose, { Schema, Document } from 'mongoose';
 
 export interface INotification extends Document {

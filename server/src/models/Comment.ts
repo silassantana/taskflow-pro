@@ -1,3 +1,4 @@
+// Comment model - threaded messages attached to a task
 import mongoose, { Schema, Document } from 'mongoose';
 
 export interface IComment extends Document {
