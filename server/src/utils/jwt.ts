@@ -1,4 +1,5 @@
 // JWT helpers - sign and verify auth tokens (2 h expiry by default)
+// JWT helpers - sign and verify auth tokens (2 h expiry by default)
 import jwt from 'jsonwebtoken';
 
 const SECRET = process.env.JWT_SECRET || 'dev-secret';
