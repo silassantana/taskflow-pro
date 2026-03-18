@@ -1,4 +1,5 @@
 // Global error handler - normalises all thrown errors into JSON
+// Global error handler - normalises all thrown errors into JSON
 import { Request, Response, NextFunction } from 'express';
 
 export function errorHandler(err: any, _req: Request, res: Response, _next: NextFunction) {
