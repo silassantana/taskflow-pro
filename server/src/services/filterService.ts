@@ -1,4 +1,5 @@
 // Filter service - builds a MongoDB FilterQuery from request params
+// Filter service - builds a MongoDB FilterQuery from request params
 import { Task } from '../models/Task';
 import { FilterQuery } from 'mongoose';
 
