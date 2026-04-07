@@ -1,3 +1,4 @@
+// Notification controller - exposes unread notifications for the current user
 import { Request, Response } from 'express';
 import { getUserNotifications } from '../services/notificationService';
 
