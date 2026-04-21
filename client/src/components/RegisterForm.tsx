@@ -1,3 +1,4 @@
+// RegisterForm - new account creation form
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
