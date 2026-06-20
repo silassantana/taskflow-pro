@@ -1,56 +1,66 @@
-# TaskFlow Pro Starter
+# TaskFlow Pro
 
-TaskFlow Pro is a full-stack project & task management platform (Node.js/Express + MongoDB + React + TypeScript + Socket.io). This starter repository is the baseline for 10 advanced tasks implementation exercises.
+A full-stack project and task management platform with real-time collaboration. Built with Node.js, React, TypeScript, MongoDB, and Socket.io.
 
-## Features (Starter)
+## Features
 
-- Auth (register/login, JWT)\n- Projects CRUD + simple progress stats\n- Tasks CRUD + basic filtering\n- Comments CRUD (pre-refactor)\n- Notifications retrieval\n- Socket.io stubs for real-time events
+- **Authentication** — JWT-based register/login with protected routes
+- **Projects** — CRUD with progress stats and team collaboration
+- **Tasks** — CRUD with filtering, status tracking, and file attachments
+- **Comments** — Threaded discussions per task
+- **Real-time** — Socket.io-powered live notifications and updates
+- **Kanban Board** — Drag-and-drop task management view
+- **Analytics Dashboard** — Project health and throughput metrics
+- **Notifications** — Per-user inbox with real-time delivery
 
-## Project Structure
+## Stack
 
-```
-server/        Backend (Express + Mongoose)
-client/        Frontend (React + Redux Toolkit)
-shared/        Shared TypeScript types
-tasks/         Task challenge definitions & test scaffolds
-run_tests.sh   Entry script used by Docker & graders
-Dockerfile     Builds test runner image
-```
+| Layer | Tech |
+|---|---|
+| Backend | Node.js, Express, TypeScript |
+| Database | MongoDB, Mongoose |
+| Real-time | Socket.io |
+| Frontend | React, Redux Toolkit, TypeScript |
+| Auth | JWT |
+| Testing | Jest |
+| Container | Docker, Docker Compose |
 
-## Running Locally
+## Getting Started
 
-Requires: Node 20+, MongoDB running locally (or set `MONGO_URI`).
+**Requirements:** Node 20+, MongoDB (local or set `MONGO_URI`)
 
-```
+```bash
+git clone https://github.com/silassantana/taskflow-pro
+cd taskflow-pro
 npm install
+cp .env.example .env   # fill in values
 npm -w server run dev
 npm -w client run dev
 ```
 
-```
-```
-
-## License / Ownership
-
-All code is original and intended for Project Anvil evaluation dataset. Not for external redistribution.
-
 ## Environment Variables
-
-Copy .env.example to .env and fill in the values before running locally.
-
-| Variable | Description | Default |
-|---|---|---|
-| PORT | HTTP server port | 4000 |
-| MONGO_URI | MongoDB connection string | mongodb://localhost:27017/taskflow_pro_dev |
-| JWT_SECRET | Secret key for signing JWTs â€“ **change in production** | dev-secret |
-| VITE_API_URL | Base URL the client uses to reach the API | http://localhost:4000 |
-## Environment Variables
-
-Copy `.env.example` to `.env` and fill in the values before running locally.
 
 | Variable | Description | Default |
 |---|---|---|
 | `PORT` | HTTP server port | `4000` |
 | `MONGO_URI` | MongoDB connection string | `mongodb://localhost:27017/taskflow_pro_dev` |
-| `JWT_SECRET` | Secret key for signing JWTs - **change in production** | `dev-secret` |
-| `VITE_API_URL` | Base URL the client uses to reach the API | `http://localhost:4000` |
+| `JWT_SECRET` | Secret for signing tokens | — |
+| `VITE_API_URL` | Client → API base URL | `http://localhost:4000` |
+
+## Docker
+
+```bash
+docker compose up
+```
+
+## Project Structure
+
+```
+server/        Express API (controllers, models, services, middleware)
+client/        React app (components, Redux slices, hooks)
+shared/        Shared TypeScript types
+```
+
+## License
+
+MIT
