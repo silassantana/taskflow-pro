@@ -12,10 +12,13 @@ import { createProject, listProjects, projectStats } from './controllers/project
 import { createTask, listTasks, updateTask } from './controllers/taskController';
 import { addComment, listComments } from './controllers/commentController';
 import { myNotifications } from './controllers/notificationController';
+import { healthCheck } from './controllers/healthController';
 
 const app = express();
 app.use(cors());
 app.use(express.json());
+
+app.get('/api/health', healthCheck);
 
 app.post('/api/auth/register', register);
 app.post('/api/auth/login', login);
