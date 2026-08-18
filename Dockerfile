@@ -1,23 +1,15 @@
-FROM python:3.11-bullseye
+FROM node:20-bookworm-slim
 
 WORKDIR /app
 
-# Install Node.js 18.x and system dependencies
-RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
-    && apt-get install -y nodejs git curl patch build-essential \
-    && rm -rf /var/lib/apt/lists/*
+COPY package.json package-lock.json ./
+COPY server/package.json server/package.json
+RUN npm ci
 
-# Copy repository
 COPY . .
-
-# Install Python dependencies
-RUN apt-get update \
-    && apt-get install -y --no-install-recommends python3 python3-pip \
-    && rm -rf /var/lib/apt/lists/*
-RUN pip3 install pytest pytest-timeout
-
-# Install Node.js dependencies (both client and server)
-RUN cd client && npm ci || npm install && cd .. \
-    && cd server && npm ci || npm install
+RUN npm run build
 
 ENV NODE_ENV=production
+
+EXPOSE 4000
+CMD ["node", "server/dist/index.js"]

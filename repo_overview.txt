@@ -13,6 +13,5 @@ repo_overview: |
     - Real-time: Socket.io namespace with join + task update broadcast stubs.
     - Analytics: Basic progress calculation per project (percent completed tasks).
     - Filtering: Query params for status, assignee, dueDate range, text search (basic regex).
-  Testing: Jest + ts-jest; run_tests.sh executes task-specific test suites (not yet passing until task implemented). Base smoke tests included.
-  Docker: Multi-stage build for Node environment; ENTRYPOINT uses run_tests.sh to execute task tests.
-  Tasks: Each under tasks/<id>/ with description + placeholder Jest test suite + solution diff file placeholder to be populated after implementation pass.
+  Testing: Jest + ts-jest; `npm test` runs credential-free unit tests without external services.
+  Docker: Node.js 20 image with frozen npm installation and production builds.

@@ -35,8 +35,11 @@ cd taskflow-pro
 npm install
 cp .env.example .env   # fill in values
 npm -w server run dev
-npm -w client run dev
+npm run dev
 ```
+
+Run `npm test` for the credential-free unit suite. It does not require MongoDB,
+private credentials, or network access.
 
 ## Environment Variables
 
@@ -57,8 +60,9 @@ docker compose up
 
 ```
 server/        Express API (controllers, models, services, middleware)
-client/        React app (components, Redux slices, hooks)
+client/        React source (components, Redux slices, hooks)
 shared/        Shared TypeScript types
+tests/         Credential-free Jest unit tests
 ```
 
 ## License

@@ -1,7 +1,13 @@
 module.exports = {
-  roots: ["<rootDir>/server/src", "<rootDir>/client/src", "<rootDir>/tasks"],
+  roots: ["<rootDir>/tests"],
   transform: {
-    "^.+\\.(ts|tsx)": ["ts-jest", { tsconfig: { module: "commonjs" } }]
+    "^.+\\.(ts|tsx)$": ["ts-jest", {
+      tsconfig: {
+        esModuleInterop: true,
+        module: "commonjs",
+        target: "ES2020"
+      }
+    }]
   },
   testEnvironment: "node",
   moduleFileExtensions: ["ts", "tsx", "js", "json"],

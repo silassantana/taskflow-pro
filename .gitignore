@@ -18,5 +18,8 @@ coverage/
 # Docker
 *.tar
 
+# Local source archives
+*.zip
+
 # Misc
 .DS_Store
