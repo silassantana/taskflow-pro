@@ -3,9 +3,9 @@
 import { Task } from '../models/Task';
 import { FilterQuery } from 'mongoose';
 
-interface TaskFilters { status?: string; assignee?: string; q?: string; dueFrom?: string; dueTo?: string; }
+export interface TaskFilters { status?: string; assignee?: string; q?: string; dueFrom?: string; dueTo?: string; }
 
-export async function filterTasks(projectId: string, filters: TaskFilters) {
+export function buildTaskQuery(projectId: string, filters: TaskFilters): FilterQuery<any> {
   const query: FilterQuery<any> = { project: projectId };
   if (filters.status) query.status = filters.status;
   if (filters.assignee) query.assignee = filters.assignee;
@@ -15,5 +15,10 @@ export async function filterTasks(projectId: string, filters: TaskFilters) {
     if (filters.dueFrom) (query.dueDate as any).$gte = new Date(filters.dueFrom);
     if (filters.dueTo) (query.dueDate as any).$lte = new Date(filters.dueTo);
   }
+  return query;
+}
+
+export async function filterTasks(projectId: string, filters: TaskFilters) {
+  const query = buildTaskQuery(projectId, filters);
   return Task.find(query).limit(200).sort({ updatedAt: -1 });
 }
