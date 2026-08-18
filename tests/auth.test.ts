@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from 'express';
-import { authMiddleware } from '../server/src/middleware/auth';
+import { authMiddleware, parseBearerToken } from '../server/src/middleware/auth';
 import { signAuthToken, verifyAuthToken } from '../server/src/utils/jwt';
 
 describe('authentication', () => {
@@ -12,6 +12,12 @@ describe('authentication', () => {
 
   it('rejects malformed tokens', () => {
     expect(verifyAuthToken('not-a-token')).toBeNull();
+  });
+
+  it('only accepts a strict Bearer authorization header', () => {
+    expect(parseBearerToken('Bearer signed-token')).toBe('signed-token');
+    expect(parseBearerToken('Basic signed-token')).toBeNull();
+    expect(parseBearerToken('Bearer token with spaces')).toBeNull();
   });
 
   it('attaches a valid token payload to a request', () => {
